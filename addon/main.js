@@ -46,6 +46,9 @@ export default Ember.Mixin.create({
    * @private
    */
   _handleResize: function (event, promise) {
+    if (this.get('isDestroyed') || this.get('isDestroying') ) {
+      return;
+    }
     if (Ember.isNone(promise)) {
       promise = Ember.RSVP.resolve(null, "Resize handler");
     }
@@ -66,7 +69,7 @@ export default Ember.Mixin.create({
    * @private
    */
   _endResize: function (event) {
-    if (this.get('isDestroyed')) {
+    if (this.get('isDestroyed') || this.get('isDestroying') ) {
       return;
     }
     this.set('resizing', false);
