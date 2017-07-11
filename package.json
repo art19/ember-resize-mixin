@@ -22,6 +22,9 @@
   },
   "author": "Taras Mankovski",
   "license": "MIT",
+  "dependencies": {
+    "ember-cli-babel": "6.4.1"
+  },
   "devDependencies": {
     "body-parser": "^1.2.0",
     "broccoli-asset-rev": "0.0.17",
